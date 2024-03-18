@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+form {
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 60rem;
+  background-color: rgb(237, 235, 235);
+  padding: 1rem;
+}
+.flex-col {
+  display: flex;
+  flex-flow: column nowrap;
+  width: 100%;
+  gap: 0.4rem;
+}
+input,
+select {
+  padding: 0.5rem;
+  border-radius: 10px;
+  width: 100%;
+}
+input:invalid {
+  outline: 2px solid red;
+  background-color: rgb(255, 255, 139);
+}
+.offscreen {
+  position: absolute;
+  left: -10000px;
+}
+.col-split {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+.btn {
+  padding: 1rem;
+}
