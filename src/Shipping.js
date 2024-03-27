@@ -1,73 +1,89 @@
 import useFormContext from "./hooks/useFormContext";
 
-export const Billing = () => {
+export const Shipping = () => {
   const { data, handleChange } = useFormContext();
   const content = (
     <div className="flex-col">
+      <div className="check">
+        <input
+          type="checkbox"
+          name="shipSameAsBilling"
+          checked={data.shipSameAsBilling}
+          onChange={handleChange}
+          id="shipCheck"
+        />
+        <label htmlFor="shipCheck">Same as Billing Address</label>
+      </div>
       <div className="col-split">
         <div className="flex-col">
-          <label htmlFor="billFirstName">First Name</label>
+          <label htmlFor="shipFirstName">First Name</label>
           <input
             type="text"
-            name="billFirstName"
+            name="shipFirstName"
             pattern="([A-Z])[\w+.]{1,}"
-            value={data.billFirstName}
+            value={data.shipFirstName}
             onChange={handleChange}
             placeholder="Jane"
-            id="billFirstName"
+            id="shipFirstName"
+            disabled={data.shipSameAsBilling}
           />
         </div>
         <div className="flex-col">
-          <label htmlFor="billLastName">Last Name</label>
+          <label htmlFor="shipLastName">Last Name</label>
           <input
             type="text"
-            name="billLastName"
+            name="shipLastName"
             pattern="([A-Z])[\w+.]{1,}"
-            value={data.billLastName}
+            value={data.shipLastName}
             onChange={handleChange}
             placeholder="Doe"
-            id="billLastName"
+            id="shipLastName"
+            disabled={data.shipSameAsBilling}
           />
         </div>
       </div>
-      <label htmlFor="billAddress1">Address</label>
+      <label htmlFor="shipAddress1">Address</label>
       <input
         type="text"
-        id="billAddress1"
-        name="billAddress1"
+        id="shipAddress1"
+        name="shipAddress1"
         placeholder="555 Wallaby Way"
         pattern="[\w\d\s.#]{2,}"
-        value={data.billAddress1}
+        value={data.shipAddress1}
         onChange={handleChange}
+        disabled={data.shipSameAsBilling}
       />
-      <label htmlFor="billAddress2" className="offscreen">
+      <label htmlFor="shipAddress2" className="offscreen">
         2nd Address Line
       </label>
       <input
         type="text"
-        id="billAddress2"
-        name="billAddress2"
+        id="shipAddress2"
+        name="shipAddress2"
         placeholder="555 Wallaby Way"
         pattern="[\w\d\s.#]{2,}"
-        value={data.billAddress2}
+        value={data.shipAddress2}
         onChange={handleChange}
+        disabled={data.shipSameAsBilling}
       />
-      <label htmlFor="billCity">City</label>
+      <label htmlFor="shipCity">City</label>
       <input
         type="text"
-        id="billCity"
-        name="billCity"
+        id="shipCity"
+        name="shipCity"
         placeholder="New York"
         pattern="([A-Z])[\w\s.]{1,}"
-        value={data.billCity}
+        value={data.shipCity}
         onChange={handleChange}
+        disabled={data.shipSameAsBilling}
       />
-      <label htmlFor="billState">State</label>
+      <label htmlFor="shipState">State</label>
       <select
-        id="billState"
-        name="billState"
-        value={data.billState}
+        id="shipState"
+        name="shipState"
+        value={data.shipState}
         onChange={handleChange}
+        disabled={data.shipSameAsBilling}
       >
         <option value="AL">Alabama</option>
         <option value="AK">Alaska</option>
@@ -122,16 +138,17 @@ export const Billing = () => {
         <option value="WY">Wyoming</option>
       </select>
 
-      <label htmlFor="billZipCode">Zip Code</label>
+      <label htmlFor="shipZipcode">Zip Code</label>
       <input
         type="text"
-        id="billZipCode"
-        name="billZipCode"
+        id="shipZipcode"
+        name="shipZipCode"
         placeholder="12345"
         pattern="[0-9]{5}"
         maxLength="5"
-        value={data.billZipCode}
+        value={data.shipZipCode}
         onChange={handleChange}
+        disabled={data.shipSameAsBilling}
       />
     </div>
   );

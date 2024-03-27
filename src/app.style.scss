@@ -36,6 +36,20 @@ input:invalid {
   justify-content: space-evenly;
   gap: 1rem;
 }
+.nav-flex {
+  display: flex;
+  justify-content: space-between;
+}
 .btn {
   padding: 1rem;
+  margin-right: 1rem;
+}
+.check {
+}
+input[type="checkbox"] {
+  width: 1rem;
+  padding: 0.5rem;
+}
+.remove-button {
+  display: none;
 }
