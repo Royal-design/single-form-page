@@ -46,7 +46,6 @@ export const FormProvider = ({ children }) => {
   const canSubmit =
     [...Object.values(requiredData)].every(Boolean) &&
     page === Object.keys(title).length - 1;
-
   useEffect(() => {
     if (data.shipSameAsBilling) {
       setData((prevData) => ({

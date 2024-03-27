@@ -5,7 +5,6 @@
 }
 form {
   margin: 0 auto;
-  margin-top: 2rem;
   width: 60rem;
   background-color: rgb(237, 235, 235);
   padding: 1rem;
@@ -52,4 +51,51 @@ input[type="checkbox"] {
 }
 .remove-button {
   display: none;
+}
+
+.progress-container {
+  margin: 2rem 0;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background-color: rgb(237, 235, 235);
+  height: 6rem;
+
+  .barmarker-container {
+    width: 100%;
+    display: flex;
+    flex: 1;
+
+    .step {
+      place-content: center;
+      display: grid;
+      width: 100%;
+
+      margin-bottom: 1rem;
+      &:not(:last-child) {
+        border-right: 2px solid black;
+      }
+    }
+  }
+  .progress {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 2rem;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+}
+.progress::-webkit-progress-bar {
+  background-color: pink;
+  border-radius: 1rem;
+}
+.progress::-webkit-progress-value {
+  background-color: limegreen;
+  border-radius: 1rem;
+}
+.progress::after {
+  content: attr(value) "%";
+  position: absolute;
+  left: 50%;
+  top: 5rem;
 }
